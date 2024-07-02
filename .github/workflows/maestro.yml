@@ -8,8 +8,8 @@ jobs:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@v2
-      - run: xcodebuild build -scheme 'MyApp' -configuration Debug -project 'MyApp.xcodeproj' -destination 'platform=iOS Simulator,name=iPhone 15 Pro Max' CONFIGURATION_BUILD_DIR=$PWD/build
+      - run: xcodebuild build -scheme 'MyBeacon' -configuration Debug -project 'MyBeacon.xcodeproj' -destination 'platform=iOS Simulator,name=iPhone 15 Pro Max' CONFIGURATION_BUILD_DIR=$PWD/build
       - uses: mobile-dev-inc/action-maestro-cloud@v1
         with:
           api-key: ${{ secrets.MAESTRO_CLOUD_API_KEY }}
-          app-file: build/MyApp.ipa
+          app-file: build/MyBeacon.app
